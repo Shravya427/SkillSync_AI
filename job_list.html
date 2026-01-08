@@ -1,0 +1,12 @@
+<!-- job_list.html -->
+<div class="main">
+<h2>{{ field }} Jobs</h2>
+{% for job in jobs %}
+<div class="card">
+<h3>{{ job.role }}</h3>
+<p>Skills: {{ job.skills | join(", ") }}</p>
+<p>Type: {{ job.type }}</p>
+<a href="/resume">Check Readiness</a>
+</div>
+{% endfor %}
+</div>

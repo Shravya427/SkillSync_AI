@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<h1 class="title">SkillSync AI Dashboard</h1>
+
+<canvas id="chart"></canvas>
+
+<script>
+new Chart(document.getElementById("chart"),{
+type:"bar",
+data:{
+labels:["Accuracy","Skills","Missing"],
+datasets:[{data:[
+{{session.accuracy or 0}},
+{{session.skills|length if session.skills else 0}},
+{{session.missing|length if session.missing else 0}}
+]}]
+}
+});
+</script>
+
+<div class="nav">
+<a href="/resume">Resume</a>
+<a href="/jobs">Jobs</a>
+<a href="/roadmap">Roadmap</a>
+<a href="/softskills">Soft Skills</a>
+</div>

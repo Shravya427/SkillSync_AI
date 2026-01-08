@@ -1,0 +1,26 @@
+<form method="POST">
+<h3>Communication</h3>
+{% for i in range(1,4) %}
+Q{{i}} <select name="q{{i}}"><option value="0">Wrong</option><option value="1">Correct</option></select><br>
+{% endfor %}
+
+<h3>Aptitude</h3>
+{% for i in range(4,7) %}
+Q{{i}} <select name="q{{i}}"><option value="0">Wrong</option><option value="1">Correct</option></select><br>
+{% endfor %}
+
+<h3>Problem Solving</h3>
+{% for i in range(7,11) %}
+Q{{i}} <select name="q{{i}}"><option value="0">Wrong</option><option value="1">Correct</option></select><br>
+{% endfor %}
+<button>Submit</button>
+</form>
+
+{% if score %}
+Score: {{score}}/10<br>
+Fake Resume Probability: {{fake}}%<br>
+
+{% if score<6 %}
+<a href="https://www.coursera.org">Improve Skills</a>
+{% endif %}
+{% endif %}
